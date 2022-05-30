@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class playerCharacter extends Actor
+public class Player extends Actor
 {
     
     /**
@@ -16,21 +16,18 @@ public class playerCharacter extends Actor
     public void act()
     {
         // Add your action code here.
-        int x = getX();
-        int y = getY();
-        setLocation (x,y);
         
         if(Greenfoot.isKeyDown("a")){
-            x -=2;
+            setLocation(getX()-2, getY());
         }
         if(Greenfoot.isKeyDown("d")){
-            x+=2;
+            setLocation(getX()+2, getY());
         }
         if(Greenfoot.isKeyDown("w")){
-            y-=2;
+            setLocation(getX(), getY()-2);
         }
         if(Greenfoot.isKeyDown("s")){
-            y+=2;
+            setLocation(getX(), getY()+2);
         }
         
         MyWorld world = (MyWorld) getWorld();

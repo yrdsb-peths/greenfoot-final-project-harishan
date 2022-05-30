@@ -32,7 +32,7 @@ public class MyWorld extends World
         return y;
     }
     public void spawnPlayer(){ 
-        playerCharacter player = new playerCharacter();
+        Player player = new Player();
         addObject(player, x,y);
     }
 }
