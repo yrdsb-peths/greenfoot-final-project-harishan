@@ -21,6 +21,7 @@ public class MyWorld extends World
         getX(100);
         getY(350);
         spawnPlayer();
+        
     }
     
     public int getX(int theX){
@@ -35,4 +36,5 @@ public class MyWorld extends World
         Player player = new Player();
         addObject(player, x,y);
     }
+    
 }
