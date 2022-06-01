@@ -37,10 +37,4 @@ public class MyWorld extends World
         addObject(player, x,y);
     }
     
-    public void spawnBullet(){
-        Bullet bullet = new Bullet();
-        addObject(bullet, x, y); //how to make bullet spawn where player 
-        //spawns
-    }
-    
 }

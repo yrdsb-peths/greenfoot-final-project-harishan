@@ -8,7 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    
+    public boolean attackStatus = false; //used to see if player is currently
+    //attacking. This way, they can't spam bullets until it hits the end of 
+    //the world or an animal
+    public int attackX;
+    public int attackY;
     /**
      * Act - do whatever the playerCharacter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -30,15 +34,24 @@ public class Player extends Actor
             setLocation(getX(), getY()+2);
         }
         if(Greenfoot.isKeyDown("e")){
-            MyWorld world = (MyWorld) getWorld();
-            fire();
+            if(attackStatus==false){
+                attackStatus=true;
+                MyWorld world = (MyWorld) getWorld();
+                fire();
+                if(attackX>=600){
+                    attackStatus=false;
+                }
+            }
         }
         
     }    
     
     public void fire(){
+        attackStatus = true; 
         MyWorld world = (MyWorld) getWorld();
-        world.addObject(new Bullet(), getX(), getY()); 
+        attackX = getX(); 
+        attackY = getY();
+        world.addObject(new Bullet(), attackX, attackY);
     }
     
 }
