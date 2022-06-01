@@ -30,14 +30,12 @@ public class Player extends Actor
             setLocation(getX(), getY()+2);
         }
         if(Greenfoot.isKeyDown("e")){
-            spawnBullet();
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnBullet();
         }
         
     }    
-    public void spawnBullet(){
-        Bullet bullet = new Bullet();
-        addObject(bullet, getX(), getY()); //how to make bullet spawn where 
-    }
+    
     
     
 }

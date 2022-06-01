@@ -10,7 +10,6 @@ public class Bullet extends Actor
 {
     public int attackX;
     public int vel;
-    public boolean attacking=false;
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,9 +23,8 @@ public class Bullet extends Actor
         attackX = getX(); 
         //need attackX to be equal to the player's x coordinate
         //ask mr chan how to globalize x to use in bullet 
-        vel +=10; 
-        int attackCalc = (attackX+=vel);
-        //addObject
-        
+        vel +=10; //velocity of bullet
+        int attackCalc = (attackX+=vel);//will add to the x value so 
+        //bullet moves
     }
 }
