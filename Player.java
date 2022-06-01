@@ -31,11 +31,14 @@ public class Player extends Actor
         }
         if(Greenfoot.isKeyDown("e")){
             MyWorld world = (MyWorld) getWorld();
-            world.spawnBullet();
+            fire();
         }
         
     }    
     
-    
+    public void fire(){
+        MyWorld world = (MyWorld) getWorld();
+        world.addObject(new Bullet(), getX(), getY()); 
+    }
     
 }
