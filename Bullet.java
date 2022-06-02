@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Bullet here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Harishan Ganeshanathan) 
+ * @version (June 2)
  */
 public class Bullet extends Actor
 {
@@ -17,4 +17,5 @@ public class Bullet extends Actor
         // Add your action code here.
         move(2);
     }
+    
 }

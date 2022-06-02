@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class playerCharacter here.
+ * Write a description of class Player here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Harishan Ganeshanathan) 
+ * @version (June 2)
  */
 public class Player extends Actor
 {
@@ -37,12 +37,8 @@ public class Player extends Actor
             if(attackStatus==false){
                 MyWorld world = (MyWorld) getWorld();
                 fire();
-                if(attackX==600){
-                    attackStatus=false;
-                }
             }
         }
-        
     }    
     
     public void fire(){
@@ -51,8 +47,12 @@ public class Player extends Actor
         attackX = getX(); 
         attackY = getY();
         world.addObject(new Bullet(), attackX, attackY);
-        
-        
     }
     
+    public boolean checkAttackStatus(){
+        if(getX() >= 600){
+            attackStatus = false; 
+        }
+        return attackStatus;
+    }
 }
