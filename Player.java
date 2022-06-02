@@ -47,12 +47,12 @@ public class Player extends Actor
         attackX = getX(); 
         attackY = getY();
         world.addObject(new Bullet(), attackX, attackY);
-    }
-    
-    public boolean checkAttackStatus(){
-        if(getX() >= 600){
-            attackStatus = false; 
+        
+        for(int i = attackX; i==600; i++){
+            if(i==600){
+                attackStatus = false;
+            }
         }
-        return attackStatus;
     }
+
 }
