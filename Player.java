@@ -35,10 +35,9 @@ public class Player extends Actor
         }
         if(Greenfoot.isKeyDown("e")){
             if(attackStatus==false){
-                attackStatus=true;
                 MyWorld world = (MyWorld) getWorld();
                 fire();
-                if(attackX>=600){
+                if(attackX==600){
                     attackStatus=false;
                 }
             }
@@ -52,6 +51,8 @@ public class Player extends Actor
         attackX = getX(); 
         attackY = getY();
         world.addObject(new Bullet(), attackX, attackY);
+        
+        
     }
     
 }
