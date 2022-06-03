@@ -49,7 +49,6 @@ public class Player extends Actor
         attackX = getX(); 
         attackY = getY();
         world.addObject(new Bullet(), attackX, attackY);
-        attackStatus = false;
     }
     public void getHit(){
         if(isTouching(Snake.class)){
