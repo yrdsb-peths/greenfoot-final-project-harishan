@@ -20,6 +20,12 @@ public class Snake extends Actor
         int y = getY();
         setLocation(x,y);
         
+        if(isTouching(Bullet.class)){
+            removeTouching(Bullet.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnSnake();
+            world.removeObject(this);
+        }
     }
     
     public void setSpeed(int spd){
