@@ -34,11 +34,13 @@ public class Player extends Actor
             setLocation(getX(), getY()+2);
         }
         if(Greenfoot.isKeyDown("e")){
-            if(attackStatus==false){
+            
+            if(attackStatus==false){ 
                 MyWorld world = (MyWorld) getWorld();
                 fire();
             }
         }
+        getHit();
     }    
     
     public void fire(){
@@ -47,11 +49,14 @@ public class Player extends Actor
         attackX = getX(); 
         attackY = getY();
         world.addObject(new Bullet(), attackX, attackY);
-        
-        for(int i = attackX; i==600; i++){
-            if(i==600){
-                attackStatus = false;
-            }
+        attackStatus = false;
+    }
+    public void getHit(){
+        if(isTouching(Snake.class)){
+            removeTouching(Snake.class);
+            MyWorld world = (MyWorld) getWorld();
+            //decrease lives method
+            world.spawnSnake();
         }
     }
 

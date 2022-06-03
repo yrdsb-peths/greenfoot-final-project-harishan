@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
     public int x;
     public int y;
+    public int level = 1;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,6 +22,7 @@ public class MyWorld extends World
         getX(100);
         getY(350);
         spawnPlayer();
+        spawnSnake();
         
     }
     
@@ -35,6 +37,14 @@ public class MyWorld extends World
     public void spawnPlayer(){ 
         Player player = new Player();
         addObject(player, x,y);
+    }
+    public void spawnSnake(){
+        int x = 600;
+        int y = Greenfoot.getRandomNumber(400);
+        
+        Snake snake = new Snake();
+        snake.setSpeed(level);
+        addObject(snake,x,y);
     }
     
 }
