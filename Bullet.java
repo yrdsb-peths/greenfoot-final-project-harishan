@@ -19,7 +19,7 @@ public class Bullet extends Actor
         shootSnake();
         //super.attackStatus = false;
         //How would i refer to the attack status variable from the player code
-        //removeBullet();
+        
     }
     public void shootSnake(){
         if(isTouching(Snake.class)){
@@ -31,11 +31,5 @@ public class Bullet extends Actor
             
         }
     }
-    /**public void removeBullet(){
-        if(getX()==600){
-            MyWorld world = (MyWorld) getWorld();
-            world.removeObject(this);
-        }
-        
-    */
+    
 }
