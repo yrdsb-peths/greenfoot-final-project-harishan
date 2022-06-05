@@ -8,9 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    public boolean attackStatus = false; //used to see if player is currently
-    //attacking. This way, they can't spam bullets until it hits the end of 
-    //the world or an animal
+    
     public int attackX;
     public int attackY;
     /**
@@ -34,29 +32,31 @@ public class Player extends Actor
             setLocation(getX(), getY()+2);
         }
         if(Greenfoot.isKeyDown("e")){
-            
-            if(attackStatus==false){ 
-                MyWorld world = (MyWorld) getWorld();
+            MyWorld world = (MyWorld) getWorld();
+            if(world.attackStatus==false){
                 fire();
             }
         }
-        getHit();
+        hitSnake();
     }    
     
     public void fire(){
-        attackStatus = true; 
         MyWorld world = (MyWorld) getWorld();
+        world.attackStatus = true;
         attackX = getX(); 
         attackY = getY();
         world.addObject(new Bullet(), attackX, attackY);
     }
-    public void getHit(){
+    public void hitSnake(){
         if(isTouching(Snake.class)){
             removeTouching(Snake.class);
             MyWorld world = (MyWorld) getWorld();
-            //decrease lives method
+            world.lives -=1; 
+            if(world.lives == 0){
+                world.gameOver();
+            }
+            world.livesLabel.setValue(world.lives); 
             world.spawnSnake();
-        }
+       } 
     }
-
 }

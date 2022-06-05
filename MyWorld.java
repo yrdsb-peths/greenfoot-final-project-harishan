@@ -11,6 +11,13 @@ public class MyWorld extends World
     public int x;
     public int y;
     public int level = 1;
+    public int score = 0;
+    public boolean attackStatus = false; //used to see if player is currently
+    //attacking. This way, they can't spam bullets until it hits the end of 
+    //the world or an animal
+    Label scoreLabel; 
+    Label livesLabel;
+    public int lives=3;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,7 +28,15 @@ public class MyWorld extends World
         super(600, 400, 1); 
         getX(100);
         getY(350);
+        
         spawnPlayer();
+        
+        scoreLabel = new Label(0,80);
+        addObject(scoreLabel, 50,50);
+        
+        livesLabel = new Label(3,80);
+        addObject(livesLabel, 50, 110);
+        
         spawnSnake();
         
     }
@@ -40,11 +55,25 @@ public class MyWorld extends World
     }
     public void spawnSnake(){
         int x = 600;
-        int y = Greenfoot.getRandomNumber(400);
+        int y = Greenfoot.getRandomNumber(350);
         
         Snake snake = new Snake();
         snake.setSpeed(level);
         addObject(snake,x,y);
     }
     
+    public void increaseScore(){
+        score++;
+        scoreLabel.setValue(score);
+        if(score%5==0){
+            level+=1;
+        }
+    }
+    
+    public void gameOver(){
+        Label gameOverLabel = new Label("Game Over", 60);
+        Label finalScoreLabel = new Label("Your Final Score was "+score, 60);
+        addObject(gameOverLabel, 300, 200);
+        addObject(finalScoreLabel, 300,250);
+    }
 }

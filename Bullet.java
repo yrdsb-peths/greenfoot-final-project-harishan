@@ -18,7 +18,9 @@ public class Bullet extends Actor
         move(2);
         //How would i refer to the attack status variable from the 
         //player code
-        if(getX() > getWorld().getWidth() -5){            
+        if(getX() > getWorld().getWidth() -5){  
+            MyWorld world = (MyWorld) getWorld();
+            world.attackStatus = false;
             getWorld().removeObject(this);
         }
     }

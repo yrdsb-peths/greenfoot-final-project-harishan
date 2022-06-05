@@ -24,6 +24,8 @@ public class Snake extends Actor
             removeTouching(Bullet.class);
             MyWorld world = (MyWorld) getWorld();
             world.spawnSnake();
+            world.increaseScore();
+            world.attackStatus = false;
             world.removeObject(this);
         }
     }

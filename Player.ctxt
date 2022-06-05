@@ -7,5 +7,5 @@ comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ playerCharacter\ wants\ to\ do.\ 
 comment2.params=
 comment2.target=void\ fire()
 comment3.params=
-comment3.target=void\ getHit()
+comment3.target=void\ hitSnake()
 numComments=4
