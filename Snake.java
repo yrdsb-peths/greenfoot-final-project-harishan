@@ -20,6 +20,11 @@ public class Snake extends Actor
         int y = getY();
         setLocation(x,y);
         
+        if(getX() == 0){
+            MyWorld world = (MyWorld) getWorld();
+            world.lostTreasure();
+        }
+        
         if(isTouching(Bullet.class)){
             removeTouching(Bullet.class);
             MyWorld world = (MyWorld) getWorld();

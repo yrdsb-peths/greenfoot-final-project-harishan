@@ -39,6 +39,9 @@ public class MyWorld extends World
         addObject(livesLabel, 50, 110);
         
         spawnSnake();
+        
+        Treasure treasure = new Treasure();
+        addObject(treasure,15, 200);
     }
     
     public int getX(int theX){
@@ -70,10 +73,16 @@ public class MyWorld extends World
         }
     }
     
-    public void gameOver(){
-        Label gameOverLabel = new Label("Game Over", 60);
+    public void gameOverDead(){
+        Label gameOverLabel = new Label("You Died!", 60);
         Label finalScoreLabel = new Label("Your Final Score was "+score, 60);
         addObject(gameOverLabel, 300, 200);
         addObject(finalScoreLabel, 300,250);
+    }
+    public void lostTreasure(){
+        Label lostTreasureLabel = new Label("The Snakes got the Treasure!", 50);
+        Label endScoreLabel = new Label("Your Final Score was "+score,60);
+        addObject(lostTreasureLabel,300,200);
+        addObject(endScoreLabel, 300,250);
     }
 }
