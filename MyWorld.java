@@ -18,6 +18,7 @@ public class MyWorld extends World
     Label scoreLabel; 
     Label livesLabel;
     public int lives=3;
+    public int numSnakes = 1;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -38,7 +39,6 @@ public class MyWorld extends World
         addObject(livesLabel, 50, 110);
         
         spawnSnake();
-        
     }
     
     public int getX(int theX){
@@ -65,7 +65,7 @@ public class MyWorld extends World
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
-        if(score%5==0){
+        if(score%10==0){
             level+=1;
         }
     }
