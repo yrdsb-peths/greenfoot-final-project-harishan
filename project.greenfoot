@@ -1,5 +1,5 @@
 #Greenfoot project file
-class.Bullet.image=arrow.png
+class.Bullet.image=bomb.png
 class.MyWorld.image=illustration-of-a-summer-deep-forest-landscape-in-cartoon-style-free-vector.jpg
 class.Player.image=man01.png
 class.Snake.image=snake.png
