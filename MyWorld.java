@@ -37,6 +37,10 @@ public class MyWorld extends World
         scoreLabel = new Label(0,80);
         addObject(scoreLabel, 50,50);
         
+        if(score%5 == 0){
+            spawnMedkit();
+        }
+        
         livesLabel = new Label(3,80);
         addObject(livesLabel, 50, 110);
         
@@ -45,9 +49,6 @@ public class MyWorld extends World
         Treasure treasure = new Treasure();
         addObject(treasure,15, 200);
         
-        if(score%5 == 0){
-            spawnMedkit();
-        }
     }
     
     public void spawnPlayer(){

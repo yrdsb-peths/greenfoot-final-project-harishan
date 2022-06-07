@@ -17,6 +17,7 @@ public class Medkit extends Actor
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
             world.lives += 1; 
+            world.livesLabel.setValue(world.lives); 
             world.removeObject(this);
         }
     }
