@@ -12,6 +12,7 @@ public class Player extends Actor
     
     public int attackX;
     public int attackY;
+    public int randPwr; 
     
     GreenfootImage idle = new GreenfootImage("images/idle.png");
     GreenfootImage[] up = new GreenfootImage[8];
@@ -92,6 +93,24 @@ public class Player extends Actor
         animateExp();
         
         hitSnake();
+        
+        MyWorld world = (MyWorld) getWorld();
+        if(world.score%5 == 0){
+            if(world.powerupStatus == true){
+                randPwr = Greenfoot.getRandomNumber(2);
+                if(randPwr == 0){
+                    world.spawnMedkit();
+                }
+                else if(randPwr == 1){
+                    world.spawnFastArrow();
+                }
+                world.powerupStatus = false; 
+            }
+        }
+        else if (world.score%5 != 0){
+            world.powerupStatus = true; 
+        }
+        
     }    
     
     public void fire(){

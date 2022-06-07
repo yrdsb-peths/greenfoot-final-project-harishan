@@ -15,10 +15,13 @@ public class MyWorld extends World
     public boolean attackStatus = false; //used to see if player is currently
     //attacking. This way, they can't spam bullets until it hits the end of 
     //the world or an animal
+    public boolean powerupStatus = true;
+    public int fastArrowCounter=0;
     Label scoreLabel; 
     Label livesLabel;
     public int lives=3;
     public int numSnakes = 1;
+    public int arrowSpeed = 2;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -37,9 +40,6 @@ public class MyWorld extends World
         scoreLabel = new Label(0,80);
         addObject(scoreLabel, 50,50);
         
-        if(score%5 == 0){
-            spawnMedkit();
-        }
         
         livesLabel = new Label(3,80);
         addObject(livesLabel, 50, 110);
@@ -68,6 +68,11 @@ public class MyWorld extends World
     public void spawnMedkit(){
         Medkit medkit = new Medkit();
         addObject(medkit, Greenfoot.getRandomNumber(450), Greenfoot.getRandomNumber(180)); 
+    }
+    
+    public void spawnFastArrow(){
+        FastArrow fastArrow = new FastArrow();
+        addObject(fastArrow, Greenfoot.getRandomNumber(450), Greenfoot.getRandomNumber(180)); 
     }
     
     public void increaseScore(){

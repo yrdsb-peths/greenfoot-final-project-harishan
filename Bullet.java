@@ -20,11 +20,11 @@ public class Bullet extends Actor
     public void act()
     {
         // Add your action code here.
-        move(2);
+        MyWorld world = (MyWorld) getWorld();
+        move(world.arrowSpeed);
         //How would i refer to the attack status variable from the 
         //player code
         if(getX() > getWorld().getWidth() -5){  
-            MyWorld world = (MyWorld) getWorld();
             world.attackStatus = false;
             getWorld().removeObject(this);
         }
