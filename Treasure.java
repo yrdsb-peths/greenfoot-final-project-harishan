@@ -12,6 +12,12 @@ public class Treasure extends Actor
      * Act - do whatever the Treasure wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public Treasure(){
+        GreenfootImage treasureImg = new GreenfootImage("images/treasure.png");
+        treasureImg.scale(75, 75);
+        setImage(treasureImg);
+    }
     public void act()
     {
         // Add your action code here.

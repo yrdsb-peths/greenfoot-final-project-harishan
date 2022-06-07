@@ -31,11 +31,7 @@ public class MyWorld extends World
         GreenfootImage bg = new GreenfootImage("images/background.jpg");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
-        
-        getX(100);
-        getY(350);
-        
-        
+              
         spawnPlayer();
         
         scoreLabel = new Label(0,80);
@@ -48,20 +44,17 @@ public class MyWorld extends World
         
         Treasure treasure = new Treasure();
         addObject(treasure,15, 200);
+        
+        if(score%5 == 0){
+            spawnMedkit();
+        }
     }
     
-    public int getX(int theX){
-        x = theX;
-        return x;
-    }
-    public int getY(int theY){
-        y=theY;
-        return y;
-    }
-    public void spawnPlayer(){ 
+    public void spawnPlayer(){
         Player player = new Player();
-        addObject(player, x,y);
+        addObject(player, 100, 350);
     }
+    
     public void spawnSnake(){
         int x = 600;
         int y = Greenfoot.getRandomNumber(350);
@@ -69,6 +62,11 @@ public class MyWorld extends World
         Snake snake = new Snake();
         snake.setSpeed(level);
         addObject(snake,x,y);
+    }
+    
+    public void spawnMedkit(){
+        Medkit medkit = new Medkit();
+        addObject(medkit, Greenfoot.getRandomNumber(450), Greenfoot.getRandomNumber(180)); 
     }
     
     public void increaseScore(){
