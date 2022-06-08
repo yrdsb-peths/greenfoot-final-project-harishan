@@ -20,11 +20,14 @@ public class Snake extends Actor
         int y = getY();
         setLocation(x,y);
         
+        //if snake reaches end, game is over (snake reached treasure)
         if(getX() == 0){
             MyWorld world = (MyWorld) getWorld();
             world.lostTreasure();
         }
         
+        //if snake is hit by arrow, remove bullet, snake, increase score and spawn 
+        //new snake
         if(isTouching(Bullet.class)){
             removeTouching(Bullet.class);
             MyWorld world = (MyWorld) getWorld();

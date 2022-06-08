@@ -14,6 +14,7 @@ public class Treasure extends Actor
      */
     
     public Treasure(){
+        //scale treasure image
         GreenfootImage treasureImg = new GreenfootImage("images/treasure.png");
         treasureImg.scale(75, 75);
         setImage(treasureImg);

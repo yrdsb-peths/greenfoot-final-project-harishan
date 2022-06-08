@@ -13,6 +13,7 @@ public class Bullet extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Bullet(){
+        //scale image of arrow 
         GreenfootImage arrow = new GreenfootImage("images/arrow.png");
         arrow.scale(90, 25);
         setImage(arrow);
@@ -22,8 +23,28 @@ public class Bullet extends Actor
         // Add your action code here.
         MyWorld world = (MyWorld) getWorld();
         move(world.arrowSpeed);
-        //How would i refer to the attack status variable from the 
-        //player code
+        
+        if(world.arrowSpeed == 4){
+            if(isTouching(Snake.class)){
+                world.fastArrowCounter +=1; 
+            }
+        }
+        if(world.fastArrowCounter == 3){
+            world.arrowSpeed = 2; 
+            world.fastArrowCounter = 0;
+        }
+        
+        if(world.playerSpeed == 4){
+            if(isTouching(Snake.class)){
+                world.superSpeedCounter +=1; 
+            }
+        }
+        if(world.superSpeedCounter == 4){
+            world.playerSpeed = 2; 
+            world.superSpeedCounter = 0;
+        }
+        
+        //if the arrow hits the end of the world, it removes itself
         if(getX() > getWorld().getWidth() -5){  
             world.attackStatus = false;
             getWorld().removeObject(this);
