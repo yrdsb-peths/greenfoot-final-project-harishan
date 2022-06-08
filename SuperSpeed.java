@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SuperSpeed extends Actor
 {
+    public SuperSpeed(){
+        GreenfootImage speedBoostImg = new GreenfootImage("images/speedboost.png");
+        speedBoostImg.scale(50, 50);
+        setImage(speedBoostImg);
+    }
     /**
      * Act - do whatever the SuperSpeed wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

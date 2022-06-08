@@ -1,11 +1,11 @@
 #Greenfoot project file
 class.Bullet.image=arrow.png
-class.FastArrow.image=bomb.png
-class.Medkit.image=flower2.png
+class.FastArrow.image=fastArrow.png
+class.Medkit.image=medkit.png
 class.MyWorld.image=background.jpg
 class.Player.image=man01.png
 class.Snake.image=snake.png
-class.SuperSpeed.image=car-5.png
+class.SuperSpeed.image=speedboost.png
 class.Treasure.image=treasure.png
 dependency1.from=MyWorld
 dependency1.to=Label

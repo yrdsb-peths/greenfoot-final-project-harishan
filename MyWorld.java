@@ -40,6 +40,7 @@ public class MyWorld extends World
         GreenfootImage bg = new GreenfootImage("images/background.jpg");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
+        
         //spawn player treasure and snake   
         spawnPlayer();
         spawnSnake();

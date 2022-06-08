@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FastArrow extends Actor
 {
+    public FastArrow(){
+        GreenfootImage fastArrowImg = new GreenfootImage("images/fastArrow.png");
+        fastArrowImg.scale(50, 50);
+        setImage(fastArrowImg);
+    }
     /**
      * Act - do whatever the FastArrow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
