@@ -22,7 +22,9 @@ public class Player extends Actor
     GreenfootImage[] up = new GreenfootImage[8];
     GreenfootImage[] down = new GreenfootImage[8];
     GreenfootImage[] left = new GreenfootImage[8];
-    GreenfootImage[] right = new GreenfootImage[8];
+    GreenfootImage[] right = new GreenfootImage[8]; 
+    
+    SimpleTimer animationTimer = new SimpleTimer();
     //Constructor
     public Player(){
         //animation for up down left right, and sets image by default to idle
@@ -38,12 +40,18 @@ public class Player extends Actor
         for(int i =0; i<right.length;i++){
             right[i] = new GreenfootImage("images/explorerRight/right"+i+".png");
         }
+        
+        
         setImage(idle);
     }
     
     //Animate Explorer
     int imageIndex = 0;
     public void animateExp(){
+        if(animationTimer.millisElapsed()<30){
+            return;
+        }
+        animationTimer.mark();
         if(facing.equals("up")){
             setImage(up[imageIndex]);
             imageIndex = (imageIndex + 1) %up.length;
@@ -144,7 +152,8 @@ public class Player extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.lives -=1; 
             if(world.lives == 0){
-                world.gameOverDead();
+                GameOverWorld playerDead = new GameOverWorld();
+                Greenfoot.setWorld(playerDead); 
             }
             world.livesLabel.setValue(world.lives); 
             world.spawnSnake();

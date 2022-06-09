@@ -27,8 +27,8 @@ public class Snake extends Actor
         
         //if snake reaches end, game is over (snake reached treasure)
         if(getX() == 0){
-            MyWorld world = (MyWorld) getWorld();
-            world.lostTreasure();
+            GameOverWorld lostTreasure = new GameOverWorld();
+            Greenfoot.setWorld(lostTreasure); 
         }
         
         //if snake is hit by arrow, remove bullet, snake, increase score and spawn 

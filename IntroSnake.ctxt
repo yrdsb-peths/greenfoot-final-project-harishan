@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=IntroSnake
+comment0.text=\r\n\ IntroSnake\ just\ makes\ a\ static\ object\ of\ the\ snakes\ in\ game\ that\ do\ not\ move\ for\ the\ intro\ screen\r\n\ If\ I\ used\ the\ actual\ snake\ objects,\ they\ would\ move\ across\ the\ screen\ and\ bunch\ up\ at\ the\ end\ which\ does\ not\ look\ good\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=IntroSnake()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ IntroSnake\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ act()
+numComments=3
