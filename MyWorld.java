@@ -13,21 +13,23 @@ public class MyWorld extends World
     public int level = 1; //level
     public int score = 0; //score
     public int lives=3; //lives
-    public ArrayList<Heart> hearts;
+    public ArrayList<Heart> hearts; //array containing hearts
     
-    public int playerSpeed = 2;
-    public int superSpeedCounter = 0;
+    public int playerSpeed = 2; //default speed of player
+    public int arrowSpeed = 2; //default speed of arrow
     
     public boolean attackStatus = false; //used to see if player is currently
     //attacking. This way, they can't spam bullets until it hits the end of 
     //the world or an animal
-    public boolean powerupStatus = true;
+    public boolean powerupStatus = true; //checks to see if player has a powerup
+    //activated or not 
     
+    public int superSpeedCounter = 0; // counts # of kills with super speed enabled
     public int fastArrowCounter=0; //counts # of fast arrows fired
+    //once these counters reach a certain number, the powerup will deactivate  
+
     //labels
     Label scoreLabel;
-    
-    public int arrowSpeed = 2; //default speed of arrow
     
     
     /**
@@ -86,7 +88,7 @@ public class MyWorld extends World
         addObject(fastArrow, Greenfoot.getRandomNumber(300), Greenfoot.getRandomNumber(180));
     }
     
-    public void spawnSuperSpeed(){
+    public void spawnSuperSpeed(){ //method for spawning super speed powerup
         SuperSpeed superSpeed = new SuperSpeed();
         addObject(superSpeed, Greenfoot.getRandomNumber(300), Greenfoot.getRandomNumber(180));
     }
@@ -100,27 +102,11 @@ public class MyWorld extends World
         }
     }
     
-    public void addHearts() {
+    public void addHearts(){//adds display for hearts.
         for (int i = 0; i < lives; i++) {
             Heart heart = new Heart();
             hearts.add(heart);
             addObject(heart, 30 + i * 40, 80);
         }
-    }
-    
-    //game over label displayed if player loses all lives
-    public void gameOverDead(){
-        Label gameOverLabel = new Label("You Died!", 60);
-        Label finalScoreLabel = new Label("Your Final Score was "+score, 60);
-        addObject(gameOverLabel, 300, 200);
-        addObject(finalScoreLabel, 300,250);
-    }
-    
-    //game over label displayed if snakes get treasure
-    public void lostTreasure(){
-        Label lostTreasureLabel = new Label("The Snakes got the Treasure!", 50);
-        Label endScoreLabel = new Label("Your Final Score was "+score,60);
-        addObject(lostTreasureLabel,300,200);
-        addObject(endScoreLabel, 300,250);
     }
 }

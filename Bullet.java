@@ -24,6 +24,8 @@ public class Bullet extends Actor
         MyWorld world = (MyWorld) getWorld();
         move(world.arrowSpeed);
         
+        //tracks how many fast arrows are fired, and resets the powerup after 
+        //counter is full
         if(world.arrowSpeed == 4){
             if(isTouching(Snake.class)){
                 world.fastArrowCounter +=1; 
@@ -34,6 +36,8 @@ public class Bullet extends Actor
             world.fastArrowCounter = 0;
         }
         
+        //tracks # of kills with superspeed activated, and resets the powerup after 
+        //counter is full
         if(world.playerSpeed == 4){
             if(isTouching(Snake.class)){
                 world.superSpeedCounter +=1; 

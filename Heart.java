@@ -14,6 +14,7 @@ public class Heart extends Actor
      */
     
     public Heart(){
+        //scale heart image
         GreenfootImage heartImg = new GreenfootImage("images/heart.png");
         heartImg.scale(40,40);
         setImage(heartImg);

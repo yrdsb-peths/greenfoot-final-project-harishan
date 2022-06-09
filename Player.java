@@ -150,6 +150,7 @@ public class Player extends Actor
         if(isTouching(Snake.class)){
             removeTouching(Snake.class);
             MyWorld world = (MyWorld) getWorld();
+            //removes a life
             world.lives -=1;
             world.removeObjects(world.hearts);
             world.hearts.clear();
