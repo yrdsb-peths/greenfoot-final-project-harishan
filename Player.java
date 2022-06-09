@@ -150,12 +150,14 @@ public class Player extends Actor
         if(isTouching(Snake.class)){
             removeTouching(Snake.class);
             MyWorld world = (MyWorld) getWorld();
-            world.lives -=1; 
+            world.lives -=1;
+            world.removeObjects(world.hearts);
+            world.hearts.clear();
+            world.addHearts();
             if(world.lives == 0){
                 GameOverWorld playerDead = new GameOverWorld();
                 Greenfoot.setWorld(playerDead); 
             }
-            world.livesLabel.setValue(world.lives); 
             world.spawnSnake();
        } 
     }

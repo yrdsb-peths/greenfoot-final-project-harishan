@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.ArrayList;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -13,6 +13,8 @@ public class MyWorld extends World
     public int level = 1; //level
     public int score = 0; //score
     public int lives=3; //lives
+    public ArrayList<Heart> hearts;
+    
     public int playerSpeed = 2;
     public int superSpeedCounter = 0;
     
@@ -23,10 +25,11 @@ public class MyWorld extends World
     
     public int fastArrowCounter=0; //counts # of fast arrows fired
     //labels
-    Label scoreLabel; 
-    Label livesLabel;
+    Label scoreLabel;
     
     public int arrowSpeed = 2; //default speed of arrow
+    
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -47,10 +50,11 @@ public class MyWorld extends World
         spawnTreasure();
         
         //spawn labels for score and lives
-        scoreLabel = new Label(0,80);
-        addObject(scoreLabel, 50,50);
-        livesLabel = new Label(3,80);
-        addObject(livesLabel, 50, 110);
+        scoreLabel = new Label("Score: "+0,40);
+        addObject(scoreLabel, 70,50);
+        
+        hearts = new ArrayList<Heart>();
+        addHearts();
     }
     
     public void spawnPlayer(){
@@ -90,9 +94,17 @@ public class MyWorld extends World
     //increases score
     public void increaseScore(){ 
         score++;
-        scoreLabel.setValue(score);
+        scoreLabel.setValue("Score: "+score);
         if(score%5==0){
             level+=1;
+        }
+    }
+    
+    public void addHearts() {
+        for (int i = 0; i < lives; i++) {
+            Heart heart = new Heart();
+            hearts.add(heart);
+            addObject(heart, 30 + i * 40, 80);
         }
     }
     
