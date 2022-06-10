@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * Opening title screen with basic instructions on key inputs 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Harishan Ganeshanathan) 
+ * @version (June 9)
  */
 public class TitleScreen extends World
 {

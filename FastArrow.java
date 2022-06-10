@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class FastArrow here.
+ *fast arrow powerup 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Harishan Ganeshanathan) 
+ * @version (June 3)
  */
 public class FastArrow extends Actor
 {

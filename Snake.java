@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Snake here.
+ * enemys that try and kill the user
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Harishan Ganeshanathan) 
+ * @version (June 3)
  */
 public class Snake extends Actor
 {

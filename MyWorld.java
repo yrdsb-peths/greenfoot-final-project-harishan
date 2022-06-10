@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * Write a description of class MyWorld here.
+ * MyWorld class, where player plays game 
  * 
  * @author (Harishan Ganeshanathan) 
  * @version (June 1)

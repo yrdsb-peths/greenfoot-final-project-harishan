@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player here.
+ * Player class that user moves with WASD
  * 
  * @author (Harishan Ganeshanathan) 
  * @version (June 2)

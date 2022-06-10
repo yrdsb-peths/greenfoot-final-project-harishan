@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Heart here.
+ * Hearts that are displayed and represent the # of lives the user has
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Harishan Ganeshanathan) 
+ * @version (June 9)
  */
 public class Heart extends Actor
 {

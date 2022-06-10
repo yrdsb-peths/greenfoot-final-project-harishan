@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Medkit here.
+ *Medkit powerup
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Harishan Ganeshanathan) 
+ * @version (june 7)
  */
 public class Medkit extends Actor
 {
     public Medkit(){
         GreenfootImage medkitImg = new GreenfootImage("images/medkit.png");
-        medkitImg.scale(75, 75);
+        medkitImg.scale(60, 60);
         setImage(medkitImg);
     }
     
