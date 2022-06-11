@@ -20,11 +20,10 @@ public class FastArrow extends Actor
      */
     public void act()
     {
-        //if the player touches the powerup, arrow speed is doubled
+        //if the player touches the powerup, arrow speed is 0.5x faster permanently
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
-            world.fastArrowCounter =0;
-            world.arrowSpeed = 4;
+            world.arrowSpeed +=0.5;
             world.removeObject(this);
         }
     }

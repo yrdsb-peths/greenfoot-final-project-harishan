@@ -25,6 +25,7 @@ public class Player extends Actor
     GreenfootImage[] right = new GreenfootImage[8]; 
     
     SimpleTimer animationTimer = new SimpleTimer();
+    
     //Constructor
     public Player(){
         //animation for up down left right, and sets image by default to idle
@@ -83,23 +84,24 @@ public class Player extends Actor
         MyWorld world = (MyWorld) getWorld();
         if(Greenfoot.isKeyDown("a")){
             facing = "left";
-            setLocation(getX()-world.playerSpeed, getY());
+            setLocation(getX()-((int)(world.playerSpeed)), getY());
         }
         if(Greenfoot.isKeyDown("d")){
             facing = "right";
-            setLocation(getX()+world.playerSpeed, getY());
+            setLocation(getX()+((int)(world.playerSpeed)), getY());
         }
         if(Greenfoot.isKeyDown("w")){
             facing = "up";
-            setLocation(getX(), getY()-world.playerSpeed);
+            setLocation(getX(), getY()-((int)(world.playerSpeed)));
         }
         if(Greenfoot.isKeyDown("s")){
             facing = "down";
-            setLocation(getX(), getY()+world.playerSpeed);
+            setLocation(getX(), getY()+((int)(world.playerSpeed)));
         }
         if(Greenfoot.isKeyDown("e")){
             //if the player is not already attacking, then fire
-            if(world.attackStatus==false){
+            if(world.attackTimer.millisElapsed()>1000){
+                world.attackTimer.mark();
                 fire();
             }
         }
@@ -125,7 +127,7 @@ public class Player extends Actor
                     world.spawnSuperSpeed();
                 }
                 //set powerupstatus to false (powerup active) so no more spawn
-                world.powerupStatus = false; 
+                world.powerupStatus = false;
             }
         }
         /**
@@ -140,7 +142,6 @@ public class Player extends Actor
     //fire method 
     public void fire(){
         MyWorld world = (MyWorld) getWorld();
-        world.attackStatus = true;
         attackX = getX(); 
         attackY = getY();
         world.addObject(new Bullet(), attackX, attackY);

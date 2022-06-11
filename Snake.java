@@ -38,7 +38,6 @@ public class Snake extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnSnake();
             world.increaseScore();
-            world.attackStatus = false;
             world.removeObject(this);
         }
     }

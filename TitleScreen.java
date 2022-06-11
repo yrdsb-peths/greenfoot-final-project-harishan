@@ -11,7 +11,7 @@ public class TitleScreen extends World
     Label titleLabel = new Label("Snake Hunter", 100);
     Label movementLabel = new Label("Use WASD to move around", 40);
     Label attackLabel = new Label("Press E to shoot an arrow", 40);
-    Label changeWorldLabel = new Label ("Press 'space' to continue", 50);
+    Label changeWorldLabel = new Label ("Press SPACE to Continue", 50);
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -34,9 +34,13 @@ public class TitleScreen extends World
     /**
      * act method
      */
+    boolean flag = false;
     public void act(){
         //start game if user presses space
-        if(Greenfoot.isKeyDown("space")){
+        if(!Greenfoot.isKeyDown("space")){
+            flag = true;
+        }
+        if(flag && Greenfoot.isKeyDown("space")){
             InstructionScreen instructions = new InstructionScreen();
             Greenfoot.setWorld(instructions); 
         }

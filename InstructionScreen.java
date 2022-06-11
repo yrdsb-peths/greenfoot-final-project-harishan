@@ -12,12 +12,11 @@ public class InstructionScreen extends World
     //create labels
     Label powerupLabel = new Label("Pick up Powerups to help you. There are ", 30);
     Label powerupLabel2 = new Label("Speed Boost, Fast Arrow and Medkit Powerups", 30);
-    Label snakesLabel = new Label("Don't get hit by snakes or let snakes hit", 30);
-    Label totalLivesLabel = new Label("The end of the world. You have 3 lives",30);
-    Label gameEndLabel = new Label("But if the snakes get to the end of the world ", 30);
-    Label gameEndLabel2 = new Label("Or you lose all of your lives ", 30);
-    Label gameEndLabel3 = new Label("YOU LOSE", 50);
-    Label startGameLabel = new Label("Press Enter to start", 40);
+    Label objectiveLabel = new Label("Objective: To stop the snakes from getting the treasure", 26);
+    Label totalLivesLabel = new Label("You have 3 lives, but if the snakes get to ",30);
+    Label gameEndLabel = new Label("the end of the world, or you lose all of your lives  ", 30);
+    Label gameEndLabel3 = new Label("YOU LOSE", 70);
+    Label startGameLabel = new Label("Press SPACE to start", 40);
     /**
      * Constructor for objects of class InstructionScreen.
      * 
@@ -39,17 +38,21 @@ public class InstructionScreen extends World
         addObject(fastArrowIcon, 250, 110);
         addObject(medkitIcon, 400, 110);
         //intruction labels
-        addObject(snakesLabel, getWidth()/2, 150);
-        addObject(totalLivesLabel, getWidth()/2, 180);
-        addObject(gameEndLabel, getWidth()/2, 210);
-        addObject(gameEndLabel2, getWidth()/2, 240);
-        addObject(gameEndLabel3, getWidth()/2, 290);
-        addObject(startGameLabel, getWidth()/2, 350);
+        addObject(objectiveLabel, getWidth()/2, 160);
+        addObject(totalLivesLabel, getWidth()/2, 190);
+        addObject(gameEndLabel, getWidth()/2, 220);
+        
+        addObject(gameEndLabel3, getWidth()/2, 270);
+        addObject(startGameLabel, getWidth()/2, 330);
     }
     
+    boolean flag = false;
     public void act(){
         //start game if user presses space
-        if(Greenfoot.isKeyDown("enter")){
+        if(!Greenfoot.isKeyDown("space")){
+            flag = true;
+        }
+        if(flag && Greenfoot.isKeyDown("space")){
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld); 
         }

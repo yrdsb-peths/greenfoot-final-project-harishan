@@ -20,11 +20,10 @@ public class SuperSpeed extends Actor
      */
     public void act()
     {
-        // if player touches powerup, player speed is now 4 instead of 2
+        // if player touches powerup, player speed is 0.5x faster permanently
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
-            world.superSpeedCounter =0;
-            world.playerSpeed = 4;
+            world.playerSpeed +=0.5;
             world.removeObject(this);
         }
     }

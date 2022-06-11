@@ -3,4 +3,6 @@ comment0.target=GameOverWorld
 comment0.text=\r\n\ Screen\ displayed\ when\ player\ dies\ or\ game\ is\ over\r\n\ \r\n\ @author\ (Harishan\ Ganeshanathan)\ \r\n\ @version\ (June\ 9)\r\n
 comment1.params=
 comment1.target=GameOverWorld()
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3

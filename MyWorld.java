@@ -15,19 +15,13 @@ public class MyWorld extends World
     public int lives=3; //lives
     public ArrayList<Heart> hearts; //array containing hearts
     
-    public int playerSpeed = 2; //default speed of player
-    public int arrowSpeed = 2; //default speed of arrow
+    public float playerSpeed = 2; //default speed of player
+    public float arrowSpeed = 2; //default speed of arrow
     
-    public boolean attackStatus = false; //used to see if player is currently
-    //attacking. This way, they can't spam bullets until it hits the end of 
-    //the world or an animal
     public boolean powerupStatus = true; //checks to see if player has a powerup
     //activated or not 
-    
-    public int superSpeedCounter = 0; // counts # of kills with super speed enabled
-    public int fastArrowCounter=0; //counts # of fast arrows fired
-    //once these counters reach a certain number, the powerup will deactivate  
-
+    //timer for attacks
+    public SimpleTimer attackTimer = new SimpleTimer();
     //labels
     Label scoreLabel;
     
