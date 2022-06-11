@@ -27,7 +27,7 @@ public class TitleScreen extends World
         addObject(titleLabel, getWidth()/2, 150);
         addObject(movementLabel, getWidth()/2, 220);
         addObject(attackLabel, getWidth()/2, 260);
-        addObject(changeWorldLabel, getWidth()/2, 300);
+        addObject(changeWorldLabel, getWidth()/2,320);
         prepare();
     }
 
