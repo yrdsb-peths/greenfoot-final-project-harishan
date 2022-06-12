@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Harishan Ganeshanathan) 
  * @version (June 2)
  */
-public class Bullet extends Actor
+public class Bullet extends SmoothMover
 {
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
@@ -22,7 +22,7 @@ public class Bullet extends Actor
     {
         // Add your action code here.
         MyWorld world = (MyWorld) getWorld();
-        move((int)(world.arrowSpeed));
+        move(world.arrowSpeed);
         
         //if the arrow hits the end of the world, it removes itself
         if(getX() > getWorld().getWidth() -5){  

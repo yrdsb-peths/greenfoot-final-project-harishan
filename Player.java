@@ -117,6 +117,7 @@ public class Player extends Actor
         if(world.score%5 == 0){
             if(world.powerupStatus == true){
                 randPwr = Greenfoot.getRandomNumber(3);
+                randPwr = 1;
                 if(randPwr == 0){
                     world.spawnMedkit();
                 }
