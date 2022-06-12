@@ -15,7 +15,7 @@ public class IntroSnake extends Actor
      */
     public IntroSnake(){ //scale snake image
         GreenfootImage snakeImg = new GreenfootImage("images/snake.png");
-        snakeImg.scale(160, 120);
+        snakeImg.scale(110, 30);
         setImage(snakeImg);
     }
     public void act()

@@ -10,7 +10,7 @@ public class Snake extends Actor
 {
     public Snake(){
         GreenfootImage snakeImg = new GreenfootImage("images/snake.png");
-        snakeImg.scale(160, 120);
+        snakeImg.scale(110, 30);
         setImage(snakeImg);
     }
     /**
