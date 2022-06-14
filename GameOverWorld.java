@@ -14,12 +14,14 @@ public class GameOverWorld extends World
      */
     Label deadLabel = new Label("YOU LOST", 100);
     Label restartLabel = new Label("Press SPACE to Restart!", 50);
-    //Label finalScoreLabel = new Label("Your final score was " +score);
+    
+    GreenfootSound gameEndSound = new GreenfootSound("gameEndSound.mp3");
     
     public GameOverWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        gameEndSound.play();
         addObject(deadLabel, getWidth()/2, 150);
         addObject(restartLabel, getWidth()/2, 300);
         //addObject(finalScoreLabel, getWidth()/2, 250);
@@ -27,7 +29,7 @@ public class GameOverWorld extends World
     
     public void act(){
         if(Greenfoot.isKeyDown("space")){
-            TitleScreen restartGame = new TitleScreen();
+            MyWorld restartGame = new MyWorld();
             Greenfoot.setWorld(restartGame);
         }
     }

@@ -24,8 +24,10 @@ public class MyWorld extends World
     public SimpleTimer attackTimer = new SimpleTimer();
     //labels
     Label scoreLabel;
-    
-    
+    //sound effects
+    GreenfootSound arrowHitSound = new GreenfootSound("hitArrow.mp3");
+    GreenfootSound equipPowerupSound = new GreenfootSound("equipPowerup.mp3");
+    GreenfootSound startGameSound = new GreenfootSound("gameStartSound.mp3");    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -40,6 +42,7 @@ public class MyWorld extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         
+        startGameSound.play();
         //spawn player treasure and snake   
         spawnPlayer();
         spawnSnake();

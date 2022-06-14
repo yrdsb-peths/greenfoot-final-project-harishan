@@ -25,7 +25,9 @@ public class Player extends Actor
     GreenfootImage[] right = new GreenfootImage[8]; 
     
     SimpleTimer animationTimer = new SimpleTimer();
-    
+    //sound effects
+    GreenfootSound arrowFireSound = new GreenfootSound("fireArrow.mp3");
+    GreenfootSound loseLifeSound = new GreenfootSound("loseLife.mp3");
     //Constructor
     public Player(){
         //animation for up down left right, and sets image by default to idle
@@ -117,7 +119,6 @@ public class Player extends Actor
         if(world.score%5 == 0){
             if(world.powerupStatus == true){
                 randPwr = Greenfoot.getRandomNumber(3);
-                randPwr = 1;
                 if(randPwr == 0){
                     world.spawnMedkit();
                 }
@@ -145,11 +146,13 @@ public class Player extends Actor
         MyWorld world = (MyWorld) getWorld();
         attackX = getX(); 
         attackY = getY();
+        arrowFireSound.play();
         world.addObject(new Bullet(), attackX, attackY);
     }
     //if player is hit by snake, remove 1 life, update lives label, and spawn new snake 
     public void hitSnake(){
         if(isTouching(Snake.class)){
+            loseLifeSound.play();
             removeTouching(Snake.class);
             MyWorld world = (MyWorld) getWorld();
             //removes a life

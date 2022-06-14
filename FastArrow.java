@@ -23,6 +23,7 @@ public class FastArrow extends Actor
         //if the player touches the powerup, arrow speed is 0.5x faster permanently
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
+            world.equipPowerupSound.play();
             world.arrowSpeed +=0.5;
             world.removeObject(this);
         }

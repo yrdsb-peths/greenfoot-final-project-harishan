@@ -36,6 +36,7 @@ public class Snake extends Actor
         if(isTouching(Bullet.class)){
             removeTouching(Bullet.class);
             MyWorld world = (MyWorld) getWorld();
+            world.arrowHitSound.play();
             world.spawnSnake();
             world.increaseScore();
             world.removeObject(this);

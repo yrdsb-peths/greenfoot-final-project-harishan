@@ -23,6 +23,7 @@ public class SuperSpeed extends Actor
         // if player touches powerup, player speed is 0.5x faster permanently
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
+            world.equipPowerupSound.play();
             world.playerSpeed +=0.5;
             world.removeObject(this);
         }

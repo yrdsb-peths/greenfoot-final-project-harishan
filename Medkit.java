@@ -23,6 +23,7 @@ public class Medkit extends Actor
         //if player touches powerup, player gains 1 life
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
+            world.equipPowerupSound.play();
             world.lives += 1;
             world.removeObjects(world.hearts);
             world.hearts.clear();
