@@ -43,17 +43,19 @@ public class MyWorld extends World
         setBackground(bg);
         
         startGameSound.play();
-        //spawn player treasure and snake   
-        spawnPlayer();
-        spawnSnake();
-        spawnTreasure();
         
+        
+        //spawn player border and snake   
+        spawnBorder();
         //spawn labels for score and lives
         scoreLabel = new Label("Score: "+0,40);
         addObject(scoreLabel, 70,50);
         
         hearts = new ArrayList<Heart>();
         addHearts();
+        
+        spawnPlayer();
+        spawnSnake();
     }
     
     public void spawnPlayer(){
@@ -70,9 +72,9 @@ public class MyWorld extends World
         addObject(snake,x,y);
     }
     
-    public void spawnTreasure(){
-        Treasure treasure = new Treasure();
-        addObject(treasure,15, 200);
+    public void spawnBorder(){
+        Border border = new Border();
+        addObject(border,25, 200);
     }
     
     public void spawnMedkit(){ //method for spawning a medkit

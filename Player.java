@@ -107,13 +107,12 @@ public class Player extends Actor
             setLocation(getX(), getY()+((int)(world.playerSpeed)));
         }
         if(Greenfoot.isKeyDown("space")){
-            //if the player is not already attacking, then fire
+            //if the timer is past 1000 millis Elapsed, fire 
             if(world.attackTimer.millisElapsed()>1000){
                 world.attackTimer.mark();
                 fire();
             }
         }
-        world.x = this.getX();
         
         //animate explorer
         animateExp();
