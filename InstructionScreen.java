@@ -10,11 +10,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class InstructionScreen extends World
 {
     //create labels
-    Label powerupLabel = new Label("Pick up Powerups to help you. There are ", 30);
-    Label powerupLabel2 = new Label("Speed Boost, Fast Arrow and Medkit Powerups", 30);
-    Label objectiveLabel = new Label("Objective: To stop the snakes from getting the treasure", 26);
-    Label totalLivesLabel = new Label("You have 3 lives, but if the snakes get to ",30);
-    Label gameEndLabel = new Label("the end of the world, or you lose all of your lives  ", 30);
+    Label powerupLabel = new Label("Powerups", 30);
+    Label powerupLabel2 = new Label("Speed Boost, Fast Arrow and Medkit", 30);
+    Label objectiveLabel = new Label("Stop the snakes from reaching the border", 30);
+    Label totalLivesLabel = new Label("If the snakes get to the end",30);
+    Label gameEndLabel = new Label("Of the world, or you lose all of your lives  ", 30);
     Label gameEndLabel3 = new Label("YOU LOSE", 70);
     Label startGameLabel = new Label("Press SPACE to start", 40);
     /**
@@ -34,9 +34,9 @@ public class InstructionScreen extends World
         FastArrow fastArrowIcon = new FastArrow();
         Medkit medkitIcon = new Medkit();
         
-        addObject(superSpeedIcon, 120, 110);
-        addObject(fastArrowIcon, 250, 110);
-        addObject(medkitIcon, 400, 110);
+        addObject(superSpeedIcon, 165, 110);
+        addObject(fastArrowIcon, 295, 110);
+        addObject(medkitIcon, 460, 110);
         //intruction labels
         addObject(objectiveLabel, getWidth()/2, 160);
         addObject(totalLivesLabel, getWidth()/2, 190);

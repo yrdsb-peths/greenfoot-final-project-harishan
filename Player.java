@@ -84,6 +84,8 @@ public class Player extends Actor
         //resets player to 'idle' when not moving, else animates and moves player
         facing = "idle";
         MyWorld world = (MyWorld) getWorld();
+        world.x = this.getX();
+        world.y = this.getY();
         if(Greenfoot.isKeyDown("a")){
             facing = "left";
             setLocation(getX()-((int)(world.playerSpeed)), getY());
@@ -91,6 +93,10 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("d")){
             facing = "right";
             setLocation(getX()+((int)(world.playerSpeed)), getY());
+            //border that the player can not move past
+            if(world.x == 200){
+                setLocation(getX()-((int)(world.playerSpeed)), getY());
+            }
         }
         if(Greenfoot.isKeyDown("w")){
             facing = "up";
@@ -100,13 +106,14 @@ public class Player extends Actor
             facing = "down";
             setLocation(getX(), getY()+((int)(world.playerSpeed)));
         }
-        if(Greenfoot.isKeyDown("e")){
+        if(Greenfoot.isKeyDown("space")){
             //if the player is not already attacking, then fire
             if(world.attackTimer.millisElapsed()>1000){
                 world.attackTimer.mark();
                 fire();
             }
         }
+        world.x = this.getX();
         
         //animate explorer
         animateExp();
@@ -139,6 +146,8 @@ public class Player extends Actor
         else if (world.score%5 != 0){
             world.powerupStatus = true; 
         }
+        
+        
     }    
     
     //fire method 

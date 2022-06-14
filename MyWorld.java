@@ -77,17 +77,17 @@ public class MyWorld extends World
     
     public void spawnMedkit(){ //method for spawning a medkit
         Medkit medkit = new Medkit();
-        addObject(medkit, Greenfoot.getRandomNumber(300), Greenfoot.getRandomNumber(180)); 
+        addObject(medkit, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(180)); 
     }
     
     public void spawnFastArrow(){ //method for spawning fast arrow powerup
         FastArrow fastArrow = new FastArrow();
-        addObject(fastArrow, Greenfoot.getRandomNumber(300), Greenfoot.getRandomNumber(180));
+        addObject(fastArrow, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(180));
     }
     
     public void spawnSuperSpeed(){ //method for spawning super speed powerup
         SuperSpeed superSpeed = new SuperSpeed();
-        addObject(superSpeed, Greenfoot.getRandomNumber(300), Greenfoot.getRandomNumber(180));
+        addObject(superSpeed, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(180));
     }
     
     //increases score
