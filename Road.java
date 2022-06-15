@@ -6,16 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Border extends Actor
+public class Road extends Actor
 {
     /**
      * Constructor 
      */
-    public Border(){
-        //scale border image
-        GreenfootImage borderImg = new GreenfootImage("images/border.jpg");
-        borderImg.scale(50,400);
-        setImage(borderImg);
+    public Road(){
+        //scale road image
+        GreenfootImage roadImg = new GreenfootImage("images/border.jpg");
+        roadImg.scale(50,400);
+        setImage(roadImg);
     }
     /**
      * Act - do whatever the Border wants to do. This method is called whenever

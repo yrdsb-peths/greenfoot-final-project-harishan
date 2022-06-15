@@ -10,9 +10,9 @@ public class MyWorld extends World
 {
     public int x;
     public int y;
-    public int level = 1; //level
-    public int score = 0; //score
-    public int lives=3; //lives
+    public int level = 1; 
+    public int score = 0; 
+    public int lives=3; 
     public ArrayList<Heart> hearts; //array containing hearts
     
     public float playerSpeed = 2; //default speed of player
@@ -45,11 +45,11 @@ public class MyWorld extends World
         startGameSound.play();
         
         
-        //spawn player border and snake   
-        spawnBorder();
+        //spawn player road and snake   
+        spawnRoad();
         //spawn labels for score and lives
         scoreLabel = new Label("Score: "+0,40);
-        addObject(scoreLabel, 70,50);
+        addObject(scoreLabel, 110,40);
         
         hearts = new ArrayList<Heart>();
         addHearts();
@@ -57,12 +57,16 @@ public class MyWorld extends World
         spawnPlayer();
         spawnSnake();
     }
-    
-    public void spawnPlayer(){
+    /**
+     * method for spawning player in world 
+     */
+    private void spawnPlayer(){
         Player player = new Player();
         addObject(player, 100, 350);
     }
-    
+    /**
+     * method for spawning snake 
+     */
     public void spawnSnake(){
         int x = 600;
         int y = Greenfoot.getRandomNumber(350);
@@ -71,28 +75,38 @@ public class MyWorld extends World
         snake.setSpeed(level);
         addObject(snake,x,y);
     }
-    
-    public void spawnBorder(){
-        Border border = new Border();
-        addObject(border,25, 200);
+    /**
+     * spawn border that snake cannot touch
+     */
+    private void spawnRoad(){
+        Road road = new Road();
+        addObject(road,25, 200);
     }
-    
-    public void spawnMedkit(){ //method for spawning a medkit
+    /**
+     * method for spawning Medkit
+     */
+    public void spawnMedkit(){ 
         Medkit medkit = new Medkit();
         addObject(medkit, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(180)); 
     }
-    
-    public void spawnFastArrow(){ //method for spawning fast arrow powerup
+    /**
+     * method for spawning fast arrow powerup
+     */
+    public void spawnFastArrow(){ 
         FastArrow fastArrow = new FastArrow();
         addObject(fastArrow, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(180));
     }
-    
-    public void spawnSuperSpeed(){ //method for spawning super speed powerup
+    /**
+     * method for spawning super speed powerup
+     */
+    public void spawnSuperSpeed(){ 
         SuperSpeed superSpeed = new SuperSpeed();
         addObject(superSpeed, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(180));
     }
     
-    //increases score
+    /**
+     * increases score 
+     */
     public void increaseScore(){ 
         score++;
         scoreLabel.setValue("Score: "+score);
@@ -100,12 +114,14 @@ public class MyWorld extends World
             level+=1;
         }
     }
-    
-    public void addHearts(){//adds display for hearts.
+    /**
+     * adds display for hearts 
+     */
+    public void addHearts(){
         for (int i = 0; i < lives; i++) {
             Heart heart = new Heart();
             hearts.add(heart);
-            addObject(heart, 30 + i * 40, 80);
+            addObject(heart, 70 + i * 40, 70);
         }
     }
 }

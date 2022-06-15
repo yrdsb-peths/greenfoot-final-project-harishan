@@ -46,13 +46,16 @@ public class InstructionScreen extends World
         addObject(startGameLabel, getWidth()/2, 330);
     }
     
-    boolean flag = false;
+    boolean spaceNotDown = false;
+    /**
+     * if space is not pressed currently and then the user presses space, switch worlds
+     */
     public void act(){
         //start game if user presses space
         if(!Greenfoot.isKeyDown("space")){
-            flag = true;
+             spaceNotDown = true;
         }
-        if(flag && Greenfoot.isKeyDown("space")){
+        if(spaceNotDown && Greenfoot.isKeyDown("space")){
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld); 
         }

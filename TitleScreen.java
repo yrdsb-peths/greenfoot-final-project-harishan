@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
+    //Labels
     Label titleLabel = new Label("Snake Hunter", 100);
     Label movementLabel = new Label("Use WASD to move around", 40);
     Label attackLabel = new Label("Use SPACE to shoot an arrow", 40);
@@ -34,13 +35,13 @@ public class TitleScreen extends World
     /**
      * act method
      */
-    boolean flag = false;
+    boolean spaceNotDown = false;
     public void act(){
         //start game if user presses space
         if(!Greenfoot.isKeyDown("space")){
-            flag = true;
+            spaceNotDown = true;
         }
-        if(flag && Greenfoot.isKeyDown("space")){
+        if(spaceNotDown && Greenfoot.isKeyDown("space")){
             InstructionScreen instructions = new InstructionScreen();
             Greenfoot.setWorld(instructions); 
         }

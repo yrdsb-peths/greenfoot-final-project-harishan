@@ -6,4 +6,5 @@ comment1.target=InstructionScreen()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ InstructionScreen.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ if\ space\ is\ not\ pressed\ currently\ and\ then\ the\ user\ presses\ space,\ switch\ worlds\r\n
 numComments=3

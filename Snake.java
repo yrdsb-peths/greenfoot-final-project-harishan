@@ -25,7 +25,7 @@ public class Snake extends Actor
         int y = getY();
         setLocation(x,y);
         
-        //if snake reaches end, game is over (snake reached treasure)
+        //if snake reaches end, game is over (snake reached border)
         if(getX() == 0){
             GameOverWorld lostTreasure = new GameOverWorld();
             Greenfoot.setWorld(lostTreasure); 
@@ -33,8 +33,8 @@ public class Snake extends Actor
         
         //if snake is hit by arrow, remove bullet, snake, increase score and spawn 
         //new snake
-        if(isTouching(Bullet.class)){
-            removeTouching(Bullet.class);
+        if(isTouching(Arrow.class)){
+            removeTouching(Arrow.class);
             MyWorld world = (MyWorld) getWorld();
             world.arrowHitSound.play();
             world.spawnSnake();
@@ -42,7 +42,9 @@ public class Snake extends Actor
             world.removeObject(this);
         }
     }
-    
+    /**
+     * set speed for snake 
+     */
     public void setSpeed(int spd){
         speed = spd;
     }

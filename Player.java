@@ -25,10 +25,14 @@ public class Player extends Actor
     GreenfootImage[] right = new GreenfootImage[8]; 
     
     SimpleTimer animationTimer = new SimpleTimer();
+    
     //sound effects
     GreenfootSound arrowFireSound = new GreenfootSound("fireArrow.mp3");
     GreenfootSound loseLifeSound = new GreenfootSound("loseLife.mp3");
-    //Constructor
+    
+    /**
+     * Constructor - sets up animation for player and then sets default image to idle 
+     */
     public Player(){
         //animation for up down left right, and sets image by default to idle
         for(int i = 0; i<up.length;i++){
@@ -48,9 +52,11 @@ public class Player extends Actor
         setImage(idle);
     }
     
-    //Animate Explorer
+    /**
+     * animate the explorer/player character
+     */
     int imageIndex = 0;
-    public void animateExp(){
+    private void animateExp(){
         if(animationTimer.millisElapsed()<30){
             return;
         }
@@ -86,6 +92,7 @@ public class Player extends Actor
         MyWorld world = (MyWorld) getWorld();
         world.x = this.getX();
         world.y = this.getY();
+        //directional inputs
         if(Greenfoot.isKeyDown("a")){
             facing = "left";
             setLocation(getX()-((int)(world.playerSpeed)), getY());
@@ -122,6 +129,10 @@ public class Player extends Actor
         //powerup spawner and randomizer
         //if new level is advanced, and if powerupstatus is true (not active)
         //activate randomizer
+        /**
+         * powerup spawner and randomizer. If new level is advanced, and if powerupstatus 
+         * is true (not active), activate the randomized spawner
+         */
         if(world.score%5 == 0){
             if(world.powerupStatus == true){
                 randPwr = Greenfoot.getRandomNumber(3);
@@ -149,16 +160,21 @@ public class Player extends Actor
         
     }    
     
-    //fire method 
-    public void fire(){
+    /**
+     * method for firing arrow 
+     */
+    private void fire(){
         MyWorld world = (MyWorld) getWorld();
         attackX = getX(); 
         attackY = getY();
         arrowFireSound.play();
-        world.addObject(new Bullet(), attackX, attackY);
+        world.addObject(new Arrow(), attackX, attackY);
     }
-    //if player is hit by snake, remove 1 life, update lives label, and spawn new snake 
-    public void hitSnake(){
+    /**
+     * if player is hit by snake, remove 1 life, update lives label, and spawn 
+     * new snake 
+     */
+    private void hitSnake(){
         if(isTouching(Snake.class)){
             loseLifeSound.play();
             removeTouching(Snake.class);

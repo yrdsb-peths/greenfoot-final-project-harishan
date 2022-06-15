@@ -17,10 +17,10 @@ public class FastArrow extends Actor
     /**
      * Act - do whatever the FastArrow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
+     * if the player touches the powerup, arrow speed is 0.5x faster permanently
      */
     public void act()
     {
-        //if the player touches the powerup, arrow speed is 0.5x faster permanently
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
             world.equipPowerupSound.play();

@@ -10,10 +10,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class IntroSnake extends Actor
 {
     /**
-     * Act - do whatever the IntroSnake wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor
      */
-    public IntroSnake(){ //scale snake image
+    public IntroSnake(){ 
         GreenfootImage snakeImg = new GreenfootImage("images/snake.png");
         snakeImg.scale(110, 30);
         setImage(snakeImg);

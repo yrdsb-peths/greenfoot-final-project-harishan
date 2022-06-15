@@ -17,15 +17,16 @@ public class Medkit extends Actor
     /**
      * Act - do whatever the Medkit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
+     * if player touches powerup, player gains 1 life
      */
     public void act()
     {
-        //if player touches powerup, player gains 1 life
         if(isTouching(Player.class)){
             MyWorld world = (MyWorld) getWorld();
             world.equipPowerupSound.play();
             world.lives += 1;
             world.removeObjects(world.hearts);
+            //reset the array of hearts to display proper number of hearts
             world.hearts.clear();
             world.addHearts();
             world.removeObject(this);
