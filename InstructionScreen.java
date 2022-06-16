@@ -13,8 +13,8 @@ public class InstructionScreen extends World
     Label powerupLabel = new Label("Powerups", 30);
     Label powerupLabel2 = new Label("Speed Boost, Fast Arrow and Medkit", 30);
     Label objectiveLabel = new Label("Stop the snakes from reaching the border", 30);
-    Label totalLivesLabel = new Label("If the snakes get to the end",30);
-    Label gameEndLabel = new Label("Of the world, or you lose all of your lives  ", 30);
+    Label totalLivesLabel = new Label("If the snakes get to the road",30);
+    Label gameEndLabel = new Label("Or you lose all of your lives  ", 30);
     Label gameEndLabel3 = new Label("YOU LOSE", 70);
     Label startGameLabel = new Label("Press SPACE to start", 40);
     /**
