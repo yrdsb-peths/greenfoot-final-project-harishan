@@ -185,7 +185,7 @@ public class Player extends Actor
             world.hearts.clear();
             world.addHearts();
             if(world.lives == 0){
-                GameOverWorld playerDead = new GameOverWorld();
+                GameOverWorld playerDead = new GameOverWorld(world.score);
                 Greenfoot.setWorld(playerDead); 
             }
             world.spawnSnake();

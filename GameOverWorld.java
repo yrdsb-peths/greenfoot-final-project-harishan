@@ -10,6 +10,7 @@ public class GameOverWorld extends World
 {
     //labels and game end sound
     Label deadLabel = new Label("YOU LOST", 100);
+    Label scoreLabel; 
     Label restartLabel = new Label("Press SPACE to Restart!", 50);
     
     GreenfootSound gameEndSound = new GreenfootSound("gameEndSound.mp3");
@@ -17,12 +18,14 @@ public class GameOverWorld extends World
      * Constructor for objects of class GameOverWorld.
      * 
      */
-    public GameOverWorld()
+    public GameOverWorld(int score)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         gameEndSound.play();
+        Label scoreLabel = new Label("YOUR FINAL SCORE WAS "+score, 50);
         addObject(deadLabel, getWidth()/2, 150);
+        addObject(scoreLabel, getWidth()/2, 235);
         addObject(restartLabel, getWidth()/2, 300);
     }
     /**
